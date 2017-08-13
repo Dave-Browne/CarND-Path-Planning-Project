@@ -48,6 +48,7 @@ See `Vehicle::update_state()` function.
 A Finite State Machine was used for the behavioural planner. This is possible as highway driving has relatively few maneuvers compared to urban driving.
 
 IMAGE
+![FSM](https://cloud.githubusercontent.com/assets/22233694/22617144/ffc5f0d8-eac5-11e6-9b6a-35898e4cb486.png "Pre Augmentation")
 
 Five states were used as seen in the figure above. A vehicle can often not change lanes immediately as there may be another vehicle next to it. It is therefore necessary to take some action until it is safe to turn or change lanes in the other direction. This is why there are Prepare Lane Change Left/Right (PLCL/R) states. Various costs are assigned (see `Vehicle::update_state()`) to different actions and can be summarised as follows:
 1) `cost_kl` - 10 points. If stuck behind a slower vehicle in it's lane
